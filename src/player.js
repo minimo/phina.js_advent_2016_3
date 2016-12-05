@@ -29,9 +29,9 @@ phina.define("multi.Player", {
 
         //Firebaseと同期する為のアクセサリ
         if (host) {
-            this.firebase = multi.FireBaseSender(firebase).attachTo(this);
+            this.firebase = phina.Firebase.Sender(firebase).attachTo(this);
         } else {
-            this.firebase = multi.FireBaseReceiver(firebase).attachTo(this);
+            this.firebase = phina.Firebase.Receiver(firebase).attachTo(this);
         }
         this.key = this.firebase.key();
 

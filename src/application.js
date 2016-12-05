@@ -31,12 +31,14 @@ phina.define("multi.Application", {
             width: SC_W,
             height: SC_H,
         });
-        this.firebase = new Firebase("https://multiplaytest.firebaseio.com/");
         this.fps = 60;
+
+        this.replaceScene(multi.MainScene());
+
         var options = {
             assets: multi.Application.assets,
         };
-        this.replaceScene(phina.game.LoadingScene(options));
+        this.pushScene(phina.game.LoadingScene(options));
     },
 
     update: function() {

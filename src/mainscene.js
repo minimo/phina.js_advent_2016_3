@@ -15,7 +15,7 @@ phina.define("multi.MainScene", {
         this.objLayer = phina.display.DisplayElement().addChildTo(this);
 
         //Firebase接続
-        this.objects = app.firebase.child("objects");
+        this.objects = firebase.child("objects");
 
         //プレイヤーID取得
         this.playerFB = this.objects.push({
