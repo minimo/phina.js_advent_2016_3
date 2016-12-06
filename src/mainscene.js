@@ -1,6 +1,6 @@
 /*
  *  MainScene.js
- *  2016/12/05
+ *  2015/09/08
  *  @auther minimo  
  *  This Program is MIT license.
  */
@@ -15,7 +15,7 @@ phina.define("multi.MainScene", {
         this.objLayer = phina.display.DisplayElement().addChildTo(this);
 
         //Firebase接続
-        this.objects = firebase.child("objects");
+        this.objects = app.firebase.child("objects");
 
         //プレイヤーID取得
         this.playerFB = this.objects.push({

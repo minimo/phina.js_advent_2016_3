@@ -18,27 +18,22 @@ phina.define("multi.Application", {
             },
             font: {
                 "azuki": "fonts/azuki.ttf",
-            },
+            }
         },
     },
-
-    //バックグラウンドカラー
-    backgroundColor: 'rgba(0, 0, 0, 1)',
 
     init: function() {
         this.superInit({
             query: '#world',
             width: SC_W,
             height: SC_H,
+            backgroundColor: 'rgba(0, 0, 0, 1)',
         });
+        this.firebase = new Firebase("https://multiplaytest.firebaseio.com/");
+
         this.fps = 60;
 
-        this.replaceScene(multi.MainScene());
-
-        var options = {
-            assets: multi.Application.assets,
-        };
-        this.pushScene(phina.game.LoadingScene(options));
+        this.replaceScene(multi.SceneFlow());
     },
 
     update: function() {
@@ -47,4 +42,28 @@ phina.define("multi.Application", {
         this.touchList.update();
         this.keyboard.update();
     },
+    unload: function() {
+        this.currentScene.unload();
+    },
+});
+
+phina.define("multi.SceneFlow", {
+    superClass: "phina.game.ManagerScene",
+
+    init: function() {
+        this.superInit({
+            startLabel: "load",
+            scenes: [{
+                label: "load",
+                className: "phina.game.LoadingScene",
+                arguments: {
+                    assets: multi.Application.assets
+                },
+                nextLabel: "main",
+            },{
+                label: "main",
+                className: "multi.MainScene",
+            }],
+        });
+    }
 });

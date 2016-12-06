@@ -1,11 +1,10 @@
 /*
- *  phina.Firebase.js
- *  2016/12/05
+ *  FireBaseLinker.js
+ *  2014/09/05
  *  @auther minimo  
  *  This Program is MIT license.
  */
 
-phina.Firebase = phina.Firebase || {};
 
 phina.define("phina.Firebase.Receiver", {
     superClass: "phina.accessory.Accessory",

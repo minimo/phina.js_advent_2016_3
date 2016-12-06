@@ -11,14 +11,12 @@
 SC_W = 640;
 SC_H = 640;
 
+
+
 //インスタンス
 var app;
 
-//Firebaseインスタンス
-var firebase;
-
 window.onload = function() {
-    firebase = new Firebase("https://multiplaytest.firebaseio.com/");
     app = multi.Application();
     app.run();
     app.enableStats();
