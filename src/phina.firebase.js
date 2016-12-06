@@ -5,6 +5,7 @@
  *  This Program is MIT license.
  */
 
+phina.Firebase = phina.Firebase || {};
 
 phina.define("phina.Firebase.Receiver", {
     superClass: "phina.accessory.Accessory",
