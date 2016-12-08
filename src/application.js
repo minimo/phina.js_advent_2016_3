@@ -29,7 +29,7 @@ phina.define("multi.Application", {
             height: SC_H,
             backgroundColor: 'rgba(0, 0, 0, 1)',
         });
-        this.firebase = new Firebase("https://multiplaytest.firebaseio.com/");
+        this.firebase = new Firebase("https://advent2016sample.firebaseio.com/");
 
         this.fps = 60;
 
