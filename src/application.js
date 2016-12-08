@@ -42,6 +42,7 @@ phina.define("multi.Application", {
         this.touchList.update();
         this.keyboard.update();
     },
+
     unload: function() {
         this.currentScene.unload();
     },

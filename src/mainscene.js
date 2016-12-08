@@ -27,7 +27,7 @@ phina.define("multi.MainScene", {
         });
         this.player = multi.Player(this.playerFB, true)
             .addChildTo(this.objLayer)
-            .setPosition(SC_W*0.2, SC_H*0.5);
+            .setPosition(Math.randint(SC_W*0.1, SC_W*0.9), SC_H*0.5);
 
         //セッションキー(プレイヤーのFirebase.key)
         this.sessionKey = this.playerFB.key();
