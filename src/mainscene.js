@@ -68,19 +68,22 @@ phina.define("multi.MainScene", {
     controlPlayer: function() {
         var p  = this.player;
         var kb = app.keyboard;
-        if (kb.getKey("left")) {
+        var gp = app.gamepad;
+        if (kb.getKey("left") || gp.getKey("left")) {
             p.vx = -5;
             p.sprite.scaleX = 2;
         }
-        if (kb.getKey("right")) {
+        if (kb.getKey("right") || gp.getKey("right")) {
             p.vx = 5;
             p.sprite.scaleX = -2;
         }
-        if (kb.getKey("up") && !p.jump) {
-            p.vy = -20;
-            p.jump = true;
+        if (kb.getKey("up") || gp.getKey("up")) {
+            if (!p.jump) {
+                p.vy = -20;
+                p.jump = true;
+            }
         }
-        if (kb.getKeyDown("space")) {
+        if (kb.getKeyDown("space") || gp.getKeyDown("A")) {
             var vx = -3*p.sprite.scaleX;
             var vy = 0;
             var firebase = this.objects.push({

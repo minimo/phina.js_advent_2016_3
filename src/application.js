@@ -34,13 +34,12 @@ phina.define("multi.Application", {
         this.fps = 60;
 
         this.replaceScene(multi.SceneFlow());
+        this.gamepadManager = phina.input.GamepadManager();
+        this.gamepad = this.gamepadManager.get(0);
     },
 
     update: function() {
-        this.mouse.update();
-        this.touch.update();
-        this.touchList.update();
-        this.keyboard.update();
+        this.gamepadManager.update();
     },
 
     unload: function() {
