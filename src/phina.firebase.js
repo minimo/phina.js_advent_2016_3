@@ -32,12 +32,12 @@ phina.define("phina.Firebase.Receiver", {
     },
 
     start: function() {
-        this._stop = true;
+        this._stop = false;
         return this;
     },
 
     stop: function() {
-        this._stop = false;
+        this._stop = true;
         return this;
     },
 
@@ -63,12 +63,12 @@ phina.define("phina.Firebase.Sender", {
     },
 
     start: function() {
-        this._stop = true;
+        this._stop = false;
         return this;
     },
 
     stop: function() {
-        this._stop = false;
+        this._stop = true;
         return this;
     },
 
